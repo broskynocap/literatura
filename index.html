@@ -218,6 +218,52 @@
             font-family: 'Cinzel', serif;
         }
         
+        /* Jaunās sadaļas stili */
+        .biography-section {
+            background: linear-gradient(145deg, #2a3147, #1e2438);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3a425e;
+            margin-top: 40px;
+            padding: 30px;
+        }
+        
+        .biography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .bio-item {
+            background: #2a3147;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .bio-title {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .museum-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .museum-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #3a425e;
+        }
+        
+        .museum-list li:last-child {
+            border-bottom: none;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -231,6 +277,10 @@
             }
             
             .romanticism-elements {
+                grid-template-columns: 1fr;
+            }
+            
+            .biography-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -331,10 +381,54 @@
             </div>
         </div>
         
+        <!-- Jaunā biogrāfijas sadaļa -->
+        <div class="biography-section">
+            <div class="section-title" style="text-align: center;">Biogrāfija un daiļrades apskats</div>
+            
+            <p><strong>Rūdolfs Blaumanis</strong> (1863–1908) tiek uzskatīts par vienu no spilgtākajiem latviešu rakstniekiem 19. gadsimta beigās un 20. gadsimta sākumā. Viņš piedzima 1863. gada 1. janvārī Ērgļu muižas kalpu mājā un bērnību pavadīja rentes mājās "Braki", kas kļuva par viņa emocionālo un radošo pamatu.</p>
+            
+            <div class="biography-grid">
+                <div class="bio-item">
+                    <div class="bio-title">Izglītība un dzīvesveids</div>
+                    <p>Blaumanis mācījās Annas Rubīnas privātskolā Ogres pagastā, pēc tam — vācu tirdzniecības skolā Rīgā. Visu mūžu viņš dzīvoja bez paša dzīvokļa, īrējot istabas pie pazīstamiem kultūras darbiniekiem.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <div class="bio-title">Daiļrade un ietekmes</div>
+                    <p>Blaumanis apzināti veidojās kā rakstnieks, sākotnēji ietekmējoties no vācu literatūras. Viņš rakstīja dramaturģiju, prozu, dzeju un publicistiku, atainoja latviešu zemnieka ikdienu un psiholoģiskos dziļumus.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <div class="bio-title">Nāve un piemiņa</div>
+                    <p>Rakstnieks mira no tuberkulozes 1908. gada 4. septembrī Somijā, apbedīts Ērgļu kapos. Viņa piemiņai veltīti vairāki pieminekļi un muzeji.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <div class="bio-title">Daiļrades saraksts (izlase)</div>
+                    <ul class="museum-list">
+                        <li><strong>Dramaturģija:</strong> "Indrāni", "Ugunī", "Pazudušais dēls"</li>
+                        <li><strong>Proza:</strong> "Noveļu izlase", "Stāstu krājums"</li>
+                        <li><strong>Liroepika:</strong> "Tālavas taurētājs"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-title">Piemiņas vietas</div>
+            <ul class="museum-list">
+                <li>Piemineklis Ērgļos (1923) un Rīgā (1929)</li>
+                <li>Memoriālais muzejs "Braki" (atvērts 1959.)</li>
+                <li>Jaņa Rozentāla un Rūdolfa Blaumaņa memoriālais muzejs Rīgā, Alberta ielā 12</li>
+            </ul>
+            
+            <div class="quote">
+                Blaumaņa daiļrade joprojām ir pieejama bibliotēkās un digitālajā lasītavā, apliecinot viņa nozīmīgumu latviešu literatūras vēsturē.
+            </div>
+        </div>
+        
         <footer>
-            <p></p>
-            <p></p>
-            <p></p>
+            <p>Rūdolfa Blaumaņa daiļrades izpēte un popularizēšana</p>
+            <p>© 2024 Literatūras vēstures projekts</p>
+            <p>Avoti: Latvijas Literatūras centrs, Tilde datu bāzes</p>
         </footer>
     </div>
     
@@ -369,6 +463,20 @@
             
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Interaktivitāte biogrāfijas sadaļai
+        document.querySelectorAll('.bio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+                this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
             });
         });
     </script>
