@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantisma pārstāvis: Rūdolfs Blaumanis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1a1f2e;
+            color: #f0e6d6;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: linear-gradient(rgba(26, 31, 46, 0.9), rgba(26, 31, 46, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%232a3147" d="M0,0 L100,0 L100,100 L0,100 Z"/><path fill="none" stroke="%233a425e" stroke-width="1" d="M0,0 L100,100 M100,0 L0,100"/></svg>');
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 2px solid #8b4513;
+        }
+        
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #c0b294;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .main-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 700px;
+            background: linear-gradient(145deg, #2a3147, #1e2438);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3a425e;
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, #8b4513, #d4af37);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #1a1f2e;
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .author-image {
+            float: right;
+            width: 200px;
+            height: 250px;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 3px solid #8b4513;
+            background-color: #3a425e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 10px;
+            background-image: linear-gradient(145deg, #3a425e, #2a3147);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #3a425e;
+        }
+        
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+        
+        .romanticism-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .element-card {
+            background: #2a3147;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #8b4513;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .element-card:hover {
+            transform: translateY(-5px);
+            border-left-color: #d4af37;
+        }
+        
+        .element-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .element-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .works-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .work-item {
+            background: #3a425e;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #8b4513;
+        }
+        
+        .work-item:hover {
+            background: #4a5270;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 20px;
+            background: #2a3147;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #d4af37;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 10px;
+            color: #c0b294;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #3a425e;
+            color: #c0b294;
+            font-size: 0.9rem;
+        }
+        
+        .romanticism-badge {
+            display: inline-block;
+            background: linear-gradient(to right, #8b4513, #d4af37);
+            color: #1a1f2e;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'Cinzel', serif;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .author-image {
+                float: none;
+                margin: 0 auto 20px;
+                width: 180px;
+                height: 230px;
+            }
+            
+            .romanticism-elements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Romantisma Pārstāvis</h1>
+            <div class="subtitle">Rūdolfs Blaumanis (1863-1908) - latviešu rakstnieks, žurnālists un tulkotājs</div>
+            <div class="romanticism-badge">ROMANTISMS</div>
+        </header>
+        
+        <div class="card-container">
+            <div class="main-card">
+                <div class="card-header">
+                    <h2>Rūdolfs Blaumanis</h2>
+                </div>
+                <div class="card-content">
+                    <div class="author-image">
+                        Rakstnieks un žurnālists<br>
+                        1863-1908
+                    </div>
+                    
+                    <p>Rūdolfs Blaumanis ir viens no ievērojamākajiem latviešu rakstniekiem, kura daiļrade ietilpst vēlīnā romantisma un reālisma periodā. Viņa daiļradi raksturo dziļa psiholoģiskā ieskats, tēlu daudzveidība un valodas bagātība.</p>
+                    
+                    <p>Blaumanis dzimis Ērgļu pagasta "Vecpiebalgas" sādžā, kur dabā pavadītā bērnība ietekmēja viņa daiļradi. Viņš strādāja kā žurnālists, publicējot savus darbus dažādos laikrakstos un žurnālos.</p>
+                    
+                    <div class="section-title">Romantisma iezīmes Blaumaņa daiļradē</div>
+                    
+                    <p>Lai gan Blaumanis bieži tiek pieskaitīts reālisma rakstniekiem, viņa darbos ir spēcīgas romantisma iezīmes: idealizēta daba, sensibilitāte, konflikts starp individu un sabiedrību, kā arī tēlu psiholoģiskā dziļums.</p>
+                    
+                    <div class="quote">
+                        "Tikai viņa mute vēl smējās, bet acīs jau bija raudāšana."
+                        <div class="quote-author">- Rūdolfs Blaumanis, "Raudupiete"</div>
+                    </div>
+                    
+                    <div class="section-title">Ievērojamākie darbi</div>
+                    
+                    <div class="works-list">
+                        <div class="work-item">Lāčplēsis (lirika)</div>
+                        <div class="work-item">Raudupiete</div>
+                        <div class="work-item">Nāves ēnā</div>
+                        <div class="work-item">Velniņi</div>
+                        <div class="work-item">Trīne</div>
+                        <div class="work-item">Indrāni</div>
+                        <div class="work-item">Ugunī</div>
+                        <div class="work-item">Pazudušais dēls</div>
+                        <div class="work-item">Skroderdienas Silmačos</div>
+                        <div class="work-item">Sestdienas vakars</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title" style="text-align: center; margin-top: 40px;">Romantisma elementi Blaumaņa daiļradē</div>
+        
+        <div class="romanticism-elements">
+            <div class="element-card">
+                <div class="element-title">
+                    <span>💖</span> Jūtīgums un emocijas
+                </div>
+                <p>Blaumaņa darbos liela nozīme ir tēlu iekšējai dzīvei, jūtām un emocijām. Viņš vēro cilvēkus viņu emocionālajos konfliktu brīžos, izceļot sensibilitāti kā romantisma raksturīgo iezīmi.</p>
+            </div>
+            
+            <div class="element-card">
+                <div class="element-title">
+                    <span>🌿</span> Daba kā spēks un simbols
+                </div>
+                <p>Daba Blaumaņa darbos nereti kļūst par aktīvu spēku, kas ietekmē tēlu likteni. Dabas ainavas kalpo kā tēlu emociju atspoguļojums un bieži vien simbolizē brīvību vai liktenīgus notikumus.</p>
+            </div>
+            
+            <div class="element-card">
+                <div class="element-title">
+                    <span>⚔️</span> Individuālisma konflikts
+                </div>
+                <p>Blaumaņa varoņi nereti nonāk konfliktā ar sabiedrības normas un ierastajiem standartiem. Šis konflikts starp individuālo un sabiedrisko ir tipiska romantisma tēma.</p>
+            </div>
+            
+            <div class="element-card">
+                <div class="element-title">
+                    <span>🎭</span> Tēlu psiholoģiskā dziļums
+                </div>
+                <p>Atšķirībā no agrinā romantisma, Blaumanis rada daudzpusīgus, psiholoģiski ticamus tēlus ar saviem iekšējiem konfliktiem un pretrunām, kas raksturīgi vēlīnajam romantismam.</p>
+            </div>
+            
+            <div class="element-card">
+                <div class="element-title">
+                    <span>🏘️</span> Tautas garastāvoklis
+                </div>
+                <p>Lai gan Blaumanis bieži tiek uzskatīts par reālistu, viņš romantiskā gaismā attēlo lauku dzīvi un latviešu tautas garu, meklējot nacionālo identitāti un tradīciju vērtības.</p>
+            </div>
+            
+            <div class="element-card">
+                <div class="element-title">
+                    <span>📜</span> Valodas bagātība
+                </div>
+                <p>Blaumaņa daiļradi raksturo bagātīga, gleznaina valoda, kas veido ainaviskus un emocionālus aprakstus. Viņš brīvi lieto latviešu valodas iespējas, radot dzīvus un ticamus tēlus.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Patstāvīgais darbs: Romantisma pārstāvja vizītkarte</p>
+            <p>Izmantotie avoti: Latviešu literatūras vēsture, enciklopēdijas, Rūdolfa Blaumaņa darbi</p>
+            <p>© 2023 | Izveidots kā izglītojošs materiāls</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Interaktivitātes elements: romantisma elementu izcelšana
+        document.querySelectorAll('.element-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                // Neliela animācija
+                const elementCards = document.querySelectorAll('.element-card');
+                elementCards.forEach(c => {
+                    if (c !== this) {
+                        c.style.opacity = '0.7';
+                    }
+                });
+                
+                setTimeout(() => {
+                    elementCards.forEach(c => {
+                        c.style.opacity = '1';
+                    });
+                }, 1000);
+            });
+        });
+        
+        // Interaktivitātes elements: darbu izcelšana
+        document.querySelectorAll('.work-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.2s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
